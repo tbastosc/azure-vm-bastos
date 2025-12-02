@@ -40,3 +40,4 @@ jobs:
           echo "${{secrets.CHAVE}}" > chave.pem
           chmod 600 chave.pem
           ssh azureuser@172.189.8.127 -i chave.pem "ls -l"
+          StrictHostKeyChecking=no
