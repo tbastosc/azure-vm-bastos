@@ -39,5 +39,5 @@ jobs:
           echo "${{secrets.CHAVE}}" > chave.pem
           chmod 600 chave.pem
           # ssh -o StrictHostKeyChecking=no -i chave.pem azureuser@172.189.8.127  "sudo chmod 777 -R /var/www/html"
-          ssh -o StrictHostKeyChecking=no -i chave.pem azureuser@172.189.8.127 "sudo tar -xvf backup.tar /var/www/html"
-          scp -o StrictHostKeyChecking=no -i chave.pem azureuser@172.189.8.127:/var/www/html/backup.tar ./backup.tar
+          ssh -o StrictHostKeyChecking=no -i chave.pem azureuser@172.189.8.127 "sudo tar -xvf /home/azureuser/backup.tar.gz /var/www/html"
+          scp -o StrictHostKeyChecking=no -i chave.pem azureuser@172.189.8.127:/home/azureuser/backup.tar.gz backup.tar.gz
