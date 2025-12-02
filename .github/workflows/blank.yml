@@ -39,5 +39,5 @@ jobs:
           ls -l
           echo "${{secrets.CHAVE}}" > chave.pem
           chmod 600 chave.pem
-          ssh -o StrictHostKeyChecking=no azureuser@172.189.8.127 -i chave.pem "sudo chmod 755 -R /var/www/html"
+          # ssh -o StrictHostKeyChecking=no azureuser@172.189.8.127 -i chave.pem "sudo chmod 755 -R /var/www/html"
           scp -o StrictHostKeyChecking=no -i chave.pem ./index.html azureuser@172.189.8.127:/var/www/html/index.html 
